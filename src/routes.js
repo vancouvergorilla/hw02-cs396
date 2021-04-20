@@ -215,7 +215,7 @@ router.route("/doctors/favorites/:doctor_id")
         console.log(`DELETE /doctors/favorites/${req.params.doctor_id}`);
         
         let doctorId = req.params["doctor_id"]
-        Doctor.deleteOne({doctor: doctorId})
+        FavoriteDoctor.deleteOne({doctor: doctorId})
             .then(data => {
                 res.status(200).send();
             })
@@ -420,7 +420,7 @@ router.route("/companions/favorites/:companion_id")
         console.log(`DELETE /companions/favorites/${req.params.companion_id}`);
         
         let companionId = req.params["companion_id"]
-        Companion.deleteOne({companion: companionId})
+        FavoriteCompanion.deleteOne({companion: companionId})
             .then(data => {
                 res.status(200).send();
             })
